@@ -2,6 +2,9 @@
 
 const Register = () => {
     return (
+        <section>
+        <h1>Registration Page</h1>
+        
         <form>
             {/*Username*/}
             <div>
@@ -25,6 +28,7 @@ const Register = () => {
             </div>
             <input type="submit" value="Register"></input>
         </form>
+        </section>
     )
 }
 
