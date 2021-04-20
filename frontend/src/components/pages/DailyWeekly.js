@@ -1,16 +1,30 @@
-import Button from '../lowLevel/Button';
-import {Link} from 'react-router-dom';
+import {useState} from "react"
 
-const DailyWeekly = () => {
+const DailyWeekly = ({onDuration}) => {
+    const [duration, setDuration] = useState('');
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+        console.log(`Component Duration: ${duration}`)
+        onDuration({duration})
+    }
+
     return (
-        <div>
-            <Link to="/dailyroutine">
-            <Button buttonName={'Daily Routine'} />
-            </Link>             
-            <Link to="/weeklyroutine">
-            <Button buttonName={'Weekly Routine'}/>
-            </Link>
-        </div>
+        // Add links to other pages...
+        <form onSubmit={onSubmit}>
+            <button 
+            type='submit'
+            value='daily'
+            onClick={(e) => setDuration(e.target.value)}>
+                Daily Routine
+            </button>
+            <button
+            type='submit'
+            value='weekly'
+            onClick={(e) => setDuration(e.target.value)}>
+                Weekly Routine
+            </button>
+        </form>
     )
 }
 

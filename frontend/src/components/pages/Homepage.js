@@ -1,9 +1,6 @@
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Button from '../lowLevel/Button'
-import Login from './Login'
-import Register from './Register'
-import DailyWeekly from './DailyWeekly'
+
 
 const Homepage = ({buttonName}) => {
     return (

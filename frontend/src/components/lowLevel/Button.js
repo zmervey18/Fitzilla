@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Button = ({buttonName, link}) => {
+const Button = ({buttonName}) => {
     return (
         <div>
             <button>

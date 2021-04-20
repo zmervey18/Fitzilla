@@ -1,5 +1,4 @@
 import React from 'react'
-import { FiLogOut,IoChevronBackOutline,BiRun } from 'react-icons/fa';
 
 const Header = () => {
     return (
