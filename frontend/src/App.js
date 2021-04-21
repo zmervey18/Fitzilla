@@ -11,11 +11,12 @@ import Workout from "./components/pages/Workout"
 import DailyWeekly from "./components/pages/DailyWeekly"
 import DailyRoutine from "./components/pages/DailyRoutine"
 import WeeklyRoutine from "./components/pages/WeeklyRoutine"
+import WeeklyWorkout from './components/pages/WeeklyWorkout'
 
 // Importing Low Level Components
 import Footer from './components/lowLevel/Footer'
 import Header from "./components/lowLevel/Header"
-import WeeklyWorkout from './components/pages/WeeklyWorkout'
+
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
   const [days, setDays] = useState('');
 
   
-  const fetchWorkout = async (length, days) => {
+  const fetchWorkout = async (duration, length, days) => {
    
     if (duration === 'daily') {
       if(length === 'short')
@@ -47,7 +48,7 @@ function App() {
     } else if (duration === 'weekly') {
        if (days !== '') {
           const respond = await fetch(`/${days}%20days`)
-          const data=await respond.json()
+          const data = await respond.json()
           console.log(data)
           return data
        }
@@ -59,9 +60,13 @@ function App() {
         fetchWorkout();
     }, [])
 
+    useEffect (() => { 
+      setDuration() 
+    }, [])
   
   const addDuration = async (i) => {
     setDuration(i)
+    console.log(duration)
   }
   const addLength = async (i) => {
     setLength(i)
@@ -75,6 +80,7 @@ function App() {
   }
   const addDays = async (i) => {
     setDays(i)
+    fetchWorkout(duration, length, days)
   }
 
   return (

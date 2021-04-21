@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const WeeklyRoutine = ({onDays}) => {
+const WeeklyRoutine = ({onDays, fetchWorkout}) => {
 //     const [days, setDays] = useState([])
 //     const url = '/2%20days';
 
