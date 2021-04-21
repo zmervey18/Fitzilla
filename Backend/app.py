@@ -53,7 +53,7 @@ def daily_routine():
 
 #Where Daily Routine redirects. The route is the /time/muscle group 1/ muscle group 2. If muscle group 1
 #is muscle group 2 then it's just eg /Arms/Arms  
-@app.route("/<time>/<muscle1>/<muscle2>", methods=['GET'])
+@app.route("/<time>/<muscle1>/<muscle2>", methods=['GET','POST'])
 # @login_required
 def one_workout(time, muscle1, muscle2):
     if time == 'Short (30 mins)':   
@@ -108,7 +108,7 @@ def weekly_routine():
 #All the exercises are presented as a long list. Each group of six exercises represents one day of the
 #weekly routine. All muscle groups are covered (except Arms which is made up of the subgroups Biceps,
 #Triceps, and Shoudlers) so this is a full body routine.
-@app.route("/<days>")
+@app.route("/<days>", methods=['GET','POST'])
 # @login_required
 def routine(days):
     list_of_exercises = []
