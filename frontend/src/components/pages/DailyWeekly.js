@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const DailyWeekly = ({onDuration}) => {
+const DailyWeekly = ({onDuration, fetchWorkout}) => {
 
     return (
         <div>
