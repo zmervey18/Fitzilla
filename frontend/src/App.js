@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react"
+import './App.css'
 
 
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
@@ -10,6 +11,8 @@ import Register from "./components/pages/Register"
 import About from "./components/pages/About"
 import Workout from "./components/pages/Workout"
 import DailyWeekly from "./components/pages/DailyWeekly"
+import DailyRoutine from "./components/pages/DailyRoutine"
+import WeeklyRoutine from "./components/pages/WeeklyRoutine"
 
 // Importing Low Level Components
 import Footer from './components/lowLevel/Footer'
@@ -54,6 +57,8 @@ function App() {
       <Route exact path="/About" component={About}/> 
       <Route exact path="/workout" component={Workout}/>
       <Route exact path="/dailyweekly" component={DailyWeekly}/>
+      <Route exact path="/dailyroutine" component={DailyRoutine}/>
+      <Route exact path="/weeklyroutine" component={WeeklyRoutine}/>
 
       
       <Footer/>

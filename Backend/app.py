@@ -108,7 +108,7 @@ def weekly_routine():
 #All the exercises are presented as a long list. Each group of six exercises represents one day of the
 #weekly routine. All muscle groups are covered (except Arms which is made up of the subgroups Biceps,
 #Triceps, and Shoudlers) so this is a full body routine.
-@app.route("/<days>")
+@app.route("/<days>", methods=['GET'])
 # @login_required
 def routine(days):
     list_of_exercises = []
