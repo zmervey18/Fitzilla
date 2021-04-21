@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-import {useState, useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import './App.css'
 
 // Importing High Level Components
@@ -12,6 +12,7 @@ import DailyWeekly from "./components/pages/DailyWeekly"
 import DailyRoutine from "./components/pages/DailyRoutine"
 import WeeklyRoutine from "./components/pages/WeeklyRoutine"
 import WeeklyWorkout from './components/pages/WeeklyWorkout'
+import DailyWorkout from './components/pages/DailyWorkout'
 
 // Importing Low Level Components
 import Footer from './components/lowLevel/Footer'
@@ -21,67 +22,97 @@ import Header from "./components/lowLevel/Header"
 
 function App() {
 
-  const [duration, setDuration] = useState('');
-  const [length, setLength] = useState('');
-  const [muscle, setMuscle]=useState([]);
-  const [days, setDays] = useState('');
+  let duration = '';
+  let length = '';
+  let muscle = []; 
+  let days = '';
+  const [workout, setWorkout] = useState([])
 
-  
-  const fetchWorkout = async (duration, length, days) => {
-   
+  // if (length == 'short') {
+  //       var workoutLength = 'Short%20%2830%20mins%29';
+  //     } else if (length == 'medium') {
+  //       var workoutLength = 'Medium%20%281%20hour%29';
+  //     } else if (length == 'long') {
+  //       var workoutLength = 'Long%20%281%20hour%2030%20mins%29';
+
+ 
+
+  const fetchWorkout= async (duration, length, days, muscle)=> {
+    console.log(duration, length, days, muscle)
     if (duration === 'daily') {
-      if(length === 'short')
-      var respond = await fetch(`/${length}%20%2830%20mins%29`)
-      var data=await respond.json()
-      console.log(data)
-      return data
 
-      // if (length == 'short') {
-      //   var workoutLength = '/Short%20%2830%20mins%29';
-      // } else if (length == 'medium') {
-      //   var workoutLength = '/Medium%20%281%20hour%29';
-      // } else if (length == 'long') {
-      //   var workoutLength = '/Long%20%281%20hour%2030%20mins%29';
-      // }
-      // var url = `/${workoutLength}/`;
+      if(length === 'Short'){
+
+        if(muscle !== []){
+          let respond = await fetch(`/${length}%20%2830%20mins%29/${muscle[0]}/${muscle[1]}`)
+          //console.log('url:', respond)
+          let data=await respond.json()
+          console.log(data)
+          setWorkout(data);
+        }
+      }
+      if(length === 'Medium'){
+
+        if(muscle !== []){
+          let respond = await fetch(`/${length}%20%281%20hour%29/${muscle[0]}/${muscle[1]}`)
+          //console.log('url:', respond)
+          let data=await respond.json()
+          console.log(data)
+          setWorkout(data);
+        }
+    }
+      if(length === 'Long'){
+
+        if(muscle !== []){
+          let respond = await fetch(`/${length}%20%281%20hour%2030%20mins%29/${muscle[0]}/${muscle[1]}`)
+          //console.log('url:', respond)
+          let data=await respond.json()
+          console.log(data)
+          setWorkout(data);
+        }
+    }
 
     } else if (duration === 'weekly') {
        if (days !== '') {
-          const respond = await fetch(`/${days}%20days`)
-          const data = await respond.json()
-          console.log(data)
-          return data
+          let respond = await fetch(`/${days}%20days`);
+          let data = await respond.json();
+          console.log(data);
+          setWorkout(data);
        }
       
     }
   }
+ 
 
-    useEffect(() => {
-        fetchWorkout();
-    }, [])
-
-    useEffect (() => { 
-      setDuration() 
-    }, [])
+    // useEffect(() => {
+    //     fetchWorkout();
+    // }, [])
   
-  const addDuration = async (i) => {
-    setDuration(i)
-    console.log(duration)
-  }
-  const addLength = async (i) => {
-    setLength(i)
-  }
-  const addMuscle = async (i) => {
-    if (muscle.length === 2) {
-      setMuscle([muscle[1],i])
-    } else if (muscle.length ===1) {
-    setMuscle([i, i])
+    const addDuration = (i) => {
+      duration = i;
+      console.log(duration);
     }
-  }
-  const addDays = async (i) => {
-    setDays(i)
-    fetchWorkout(duration, length, days)
-  }
+    const addLength = (i) => {
+      length = i;
+      console.log(length);
+    }
+    const addMuscle = (i) => {
+      if (muscle.length === 2) {
+        muscle = [muscle[1],i];
+        // fetchWorkout(duration, length, days, muscle);
+        console.log(muscle);
+      } else if (muscle.length <=1) {
+        muscle = [i, i];
+        //fetchWorkout(duration, length, days, muscle);
+        console.log(muscle);
+      }
+      
+    }
+    const addDays = (i) => {
+      days = i;
+      fetchWorkout(duration, length, days, muscle);
+      console.log(days);
+    }
 
   return (
     <Router>
@@ -117,7 +148,14 @@ function App() {
         exact path="/weeklyworkout"
         render={(props) => (
           <WeeklyWorkout {...props} 
-          onFetchWorkout={fetchWorkout}/>
+        workout={workout} fetchWorkout={fetchWorkout}/>
+        )}
+      />
+      <Route
+        exact path="/dailyworkout"
+        render={(props) => (
+          <DailyWorkout {...props} 
+        workout={workout} fetchWorkout={fetchWorkout}/>
         )}
       />
       <Footer/>

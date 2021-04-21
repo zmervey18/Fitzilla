@@ -1,27 +1,6 @@
 import { Link } from 'react-router-dom';
 
 const WeeklyRoutine = ({onDays, fetchWorkout}) => {
-//     const [days, setDays] = useState([])
-//     const url = '/2%20days';
-
-//     const fetchWeekly = async () => {
-//         try {
-//             const response = await fetch(url);
-//             const days = await response.json();
-//             console.log(days)
-//             setDays(days);
-
-
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-//     useEffect(() => {
-//         fetchWeekly();
-//     }, [])
-
-    // onClick = { fetchWeekly }
-
     return (
         <form>
             <h2>Number of Days</h2>
