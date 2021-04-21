@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-import {useState, useEffect} from "react"
 import './App.css'
+import {useEffect} from "react"
 
 // Importing High Level Components
 import Login from './components/pages/Login'
@@ -21,10 +21,10 @@ import Header from "./components/lowLevel/Header"
 
 function App() {
 
-  const [duration, setDuration] = useState('');
-  const [length, setLength] = useState('');
-  const [muscle, setMuscle]=useState([]);
-  const [days, setDays] = useState('');
+  let duration = '';
+  let length = '';
+  let muscle = [];
+  let days = '';
 
   
   const fetchWorkout = async (duration, length, days) => {
@@ -47,6 +47,7 @@ function App() {
 
     } else if (duration === 'weekly') {
        if (days !== '') {
+          console.log(duration, days)
           const respond = await fetch(`/${days}%20days`)
           const data = await respond.json()
           console.log(data)
@@ -56,31 +57,32 @@ function App() {
     }
   }
 
-    useEffect(() => {
-        fetchWorkout();
-    }, [])
+  useEffect(() => {
+    fetchWorkout();
+  }, [])
 
-    useEffect (() => { 
-      setDuration() 
-    }, [])
-  
-  const addDuration = async (i) => {
-    setDuration(i)
-    console.log(duration)
+
+  const addDuration = (i) => {
+    duration = i;
+    console.log(duration);
   }
-  const addLength = async (i) => {
-    setLength(i)
+  const addLength = (i) => {
+    length = i;
+    console.log(length);
   }
-  const addMuscle = async (i) => {
+  const addMuscle = (i) => {
     if (muscle.length === 2) {
-      setMuscle([muscle[1],i])
-    } else if (muscle.length ===1) {
-    setMuscle([i, i])
+      muscle = [muscle[1],i];
+      console.log(muscle);
+    } else if (muscle.length <=1) {
+      muscle = [i, i];
+      console.log(muscle);
     }
   }
-  const addDays = async (i) => {
-    setDays(i)
-    fetchWorkout(duration, length, days)
+  const addDays = (i) => {
+    days = i;
+    fetchWorkout(duration, length, days);
+    console.log(days);
   }
 
   return (

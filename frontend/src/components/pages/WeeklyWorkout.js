@@ -1,7 +1,7 @@
-import {useState} from "react"
+// import {useState} from "react"
 
 const WeeklyWorkout = ({onFetchWorkout}) => {
-    const [workout, setWorkout] = useState('')
+    // const [workout, setWorkout] = useState('')
     return (
         <div>
             <h1>Weekly Workout Page</h1>
