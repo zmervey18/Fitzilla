@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import React, {useEffect, useState} from "react"
-import './App.css'
 
 // Importing High Level Components
 import Login from './components/pages/Login'
@@ -18,6 +17,7 @@ import DailyWorkout from './components/pages/DailyWorkout'
 import Footer from './components/lowLevel/Footer'
 import Header from "./components/lowLevel/Header"
 
+import "./App.css"
 
 
 function App() {
@@ -98,12 +98,12 @@ function App() {
     }
     const addMuscle = (i) => {
       if (muscle.length === 2) {
-        muscle = [muscle[1],i];
+        muscle = [muscle[0],i];
         // fetchWorkout(duration, length, days, muscle);
         console.log(muscle);
       } else if (muscle.length <=1) {
         muscle = [i, i];
-        //fetchWorkout(duration, length, days, muscle);
+        fetchWorkout(duration, length, days, muscle);
         console.log(muscle);
       }
       
@@ -116,49 +116,51 @@ function App() {
 
   return (
     <Router>
+      <div className="container">
       <Header/>
 
-      <Route exact path="/" component={Homepage}/>
-      <Route exact path="/login" component={Login}/> 
-      <Route exact path="/register" component={Register}/> 
-      <Route exact path="/About" component={About}/> 
-      <Route exact path="/workout" component={Workout}/>
-      <Route 
-        exact path="/dailyweekly"
-        render={(props) => (
-          <DailyWeekly {...props} 
-          onDuration={addDuration} fetchWorkout={fetchWorkout} />
-        )}
-      />
-      <Route 
-        exact path="/dailyroutine"
-        render={(props) => (
-          <DailyRoutine {...props} 
-          onLength={addLength} onMuscle={addMuscle} fetchWorkout={fetchWorkout}/>
-        )}
-      />
-      <Route
-        exact path="/weeklyroutine"
-        render={(props) => (
-          <WeeklyRoutine {...props} 
-          onDays={addDays} fetchWorkout={fetchWorkout}/>
-        )}
-      />
-      <Route
-        exact path="/weeklyworkout"
-        render={(props) => (
-          <WeeklyWorkout {...props} 
-        workout={workout} fetchWorkout={fetchWorkout}/>
-        )}
-      />
-      <Route
-        exact path="/dailyworkout"
-        render={(props) => (
-          <DailyWorkout {...props} 
-        workout={workout} fetchWorkout={fetchWorkout}/>
-        )}
-      />
+        <Route exact path="/" component={Homepage}/>
+        <Route exact path="/login" component={Login}/> 
+        <Route exact path="/register" component={Register}/> 
+        <Route exact path="/About" component={About}/> 
+        <Route exact path="/workout" component={Workout}/>
+        <Route 
+          exact path="/dailyweekly"
+          render={(props) => (
+            <DailyWeekly {...props} 
+            onDuration={addDuration} fetchWorkout={fetchWorkout} />
+          )}
+        />
+        <Route 
+          exact path="/dailyroutine"
+          render={(props) => (
+            <DailyRoutine {...props} 
+            onLength={addLength} onMuscle={addMuscle} fetchWorkout={fetchWorkout}/>
+          )}
+        />
+        <Route
+          exact path="/weeklyroutine"
+          render={(props) => (
+            <WeeklyRoutine {...props} 
+            onDays={addDays} fetchWorkout={fetchWorkout}/>
+          )}
+        />
+        <Route
+          exact path="/weeklyworkout"
+          render={(props) => (
+            <WeeklyWorkout {...props} 
+          workout={workout} fetchWorkout={fetchWorkout}/>
+          )}
+        />
+        <Route
+          exact path="/dailyworkout"
+          render={(props) => (
+            <DailyWorkout {...props} 
+          workout={workout} fetchWorkout={fetchWorkout}/>
+          )}
+        />
       <Footer/>
+      </div>
     </Router>
   );
 }

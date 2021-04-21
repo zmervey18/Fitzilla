@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import "../../App.css"
+
 const Footer = () => {
     return (
         <div>
-            <footer>
+            <footer className="footer">
             <p>Fitzilla Copyright &copy; 2021</p>
             <Link to="/about">About Us</Link>
         </footer>

@@ -3,46 +3,48 @@ import { Link } from 'react-router-dom';
 // import ToggleButton from '@material-ui/lab/ToggleButton';
 // import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
+import "../../App.css"
+
 const DailyRoutine = ({onLength, onMuscle, fetchWorkout}) => {
     return (
         <div>
-            <h2>Workout Length</h2>
-            <p>Please select your workout length</p>
-            <button onClick={(e) => onLength('Short')}>
+            <h2 className="pageTitles">Workout Length</h2>
+            <p className="pageTitles">Please select your workout length</p>
+            <button className="btnMultiple" onClick={(e) => onLength('Short')}>
                 30 Min
             </button>
-            <button onClick={(e) => onLength('Medium')}> 
+            <button className="btnMultiple" onClick={(e) => onLength('Medium')}> 
                 60 Min
             </button>
-            <button onClick={(e) => onLength('Long')}>
+            <button className="btnMultiple" onClick={(e) => onLength('Long')}>
                 90 Min
             </button>
 
-            <h2>Muscle Group</h2>
-            <p>Please select up to two muscle groups</p>
-            <button onClick={(e) => onMuscle('Arms')}>
+            <h2 className="pageTitles">Muscle Group</h2>
+            <p className="pageTitles">Please select up to two muscle groups</p>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Arms')}>
                 Arms
             </button>
-            <button onClick={(e) => onMuscle('Back')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Back')}>
                 Back
             </button>
-            <button onClick={(e) => onMuscle('Chest')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Chest')}>
                 Chest
             </button>
-            <button onClick={(e) => onMuscle('Legs')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Legs')}>
                 Legs
             </button>
-            <button onClick={(e) => onMuscle('Triceps')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Triceps')}>
                 Triceps
             </button>
-            <button onClick={(e) => onMuscle('Biceps')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Biceps')}>
                 Biceps
             </button>
-            <button onClick={(e) => onMuscle('Shoulders')}>
+            <button className="btnMultiple" onClick={(e) => onMuscle('Shoulders')}>
                 Shoulders
             </button>
 
-            <Link to="/dailyworkout"><button onClick={fetchWorkout}>Your Exercises</button></Link>
+            <Link to="/dailyworkout"><button className="btnMultiple"  onClick={fetchWorkout}>Your Exercises</button></Link>
         </div>
     )
 }

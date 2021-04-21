@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import {useEffect} from 'react'
 
+import "../../App.css"
+
 export const DailyWorkout = ({workout, fetchWorkout}) => {
 
     useEffect(() => {
@@ -8,9 +10,9 @@ export const DailyWorkout = ({workout, fetchWorkout}) => {
     }, [])
     return (
         <div>
-            <h1>Daily Workout Page</h1>
+            <h1 className="pageTitles">Daily Workout Page</h1>
             <ul>{workout.map((exercise, index) => (<li key={index}>{exercise}</li>))}</ul>
-            <Link to="/dailyworkout"><button>refresh</button></Link>
+            <Link to="/dailyworkout"><button className="btn">Refresh</button></Link>
         </div>
     )
 }
