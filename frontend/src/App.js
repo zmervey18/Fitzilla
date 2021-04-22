@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import './App.css'
-import {useEffect} from "react"
 
 // Importing High Level Components
 import Login from './components/pages/Login'
@@ -46,9 +45,8 @@ function App() {
 
         if(muscle !== []){
           let respond = await fetch(`/${length}%20%2830%20mins%29/${muscle[0]}/${muscle[1]}`)
-          //console.log('url:', respond)
+          console.log(respond)
           let data=await respond.json()
-          console.log(data)
           setWorkout(data);
         }
       }
@@ -56,9 +54,8 @@ function App() {
 
         if(muscle !== []){
           let respond = await fetch(`/${length}%20%281%20hour%29/${muscle[0]}/${muscle[1]}`)
-          //console.log('url:', respond)
+          console.log(respond)
           let data=await respond.json()
-          console.log(data)
           setWorkout(data);
         }
     }
@@ -66,9 +63,8 @@ function App() {
 
         if(muscle !== []){
           let respond = await fetch(`/${length}%20%281%20hour%2030%20mins%29/${muscle[0]}/${muscle[1]}`)
-          //console.log('url:', respond)
+          console.log(respond)
           let data=await respond.json()
-          console.log(data)
           setWorkout(data);
         }
     }
@@ -77,7 +73,6 @@ function App() {
        if (days !== '') {
           let respond = await fetch(`/${days}%20days`);
           let data = await respond.json();
-          console.log(data);
           setWorkout(data);
        }
       
@@ -91,34 +86,26 @@ function App() {
   
     const addDuration = (i) => {
       duration = i;
-      console.log(duration);
     }
     const addLength = (i) => {
       length = i;
-      console.log(length);
     }
     const addMuscle = (i) => {
       if (muscle.length === 2) {
-        muscle = [muscle[1],i];
-        // fetchWorkout(duration, length, days, muscle);
-        console.log(muscle);
+        muscle=[muscle[2],i];
       } else if (muscle.length <=1) {
         muscle = [i, i];
-        //fetchWorkout(duration, length, days, muscle);
-        console.log(muscle);
       }
       
     }
     const addDays = (i) => {
       days = i;
       fetchWorkout(duration, length, days, muscle);
-      console.log(days);
     }
 
   return (
     <Router>
-      <Header/>
-
+      <Route path='/' component={Header}/>
       <Route exact path="/" component={Homepage}/>
       <Route exact path="/login" component={Login}/> 
       <Route exact path="/register" component={Register}/> 

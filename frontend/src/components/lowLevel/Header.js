@@ -1,12 +1,21 @@
 import React from 'react'
 import { BiRun } from 'react-icons/bi';
+import BackButton from './BackButton'; 
+import HomeButton from './HomeButton';
 
-const Header = () => {
+const Header = (props) => {
+    if (props.location.pathname === '/') {
+        return (
+            <header>
+                <h1><BiRun/>Fitzilla</h1>
+        </header>
+        )
+    }
     return (
         <header>
-            <div>
                 <h1><BiRun/>Fitzilla</h1>
-            </div>
+                <BackButton />
+                <HomeButton />
         </header>
     )
 }

@@ -1,10 +1,8 @@
-
 import { Link } from 'react-router-dom';
-// import ToggleButton from '@material-ui/lab/ToggleButton';
-// import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 const DailyRoutine = ({onLength, onMuscle, fetchWorkout}) => {
     return (
+        // Turn into form, 'Your exercise' be submit button
         <div>
             <h2>Workout Length</h2>
             <p>Please select your workout length</p>
@@ -41,8 +39,11 @@ const DailyRoutine = ({onLength, onMuscle, fetchWorkout}) => {
             <button onClick={(e) => onMuscle('Shoulders')}>
                 Shoulders
             </button>
-
-            <Link to="/dailyworkout"><button onClick={fetchWorkout}>Your Exercises</button></Link>
+            <Link to="/dailyworkout" onClick={(e) => fetchWorkout('daily','Short','',[['Biceps'],['Legs']])}>
+                <button >
+                    Your Exercises
+                </button>
+            </Link>
         </div>
     )
 }

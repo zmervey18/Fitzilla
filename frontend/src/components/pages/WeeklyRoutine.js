@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const WeeklyRoutine = ({onDays, fetchWorkout}) => {
+const WeeklyRoutine = ({onDays}) => {
     return (
         <form>
             <h2>Number of Days</h2>
@@ -25,8 +25,6 @@ const WeeklyRoutine = ({onDays, fetchWorkout}) => {
                     6 Days
                 </button>
             </Link>
-
-
         </form>
     )
 }
