@@ -1,30 +1,50 @@
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const WeeklyRoutine = ({onDays}) => {
+const WeeklyRoutine = ({fetchWorkout}) => {
+    var days = '';
+    let history = useHistory();
+
+    const addDays = (i) => {
+    days = i;
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+        if (!days) {
+            alert('Please select a workout length')
+            return
+        }
+        fetchWorkout('weekly','',days,[])
+        history.push({pathname:'/weeklyworkout', state: days});
+        console.log(days);
+        days='';
+        
+    }
+
     return (
-        <form className="pageTitles">
+        <form className="pageTitles" onSubmit={onSubmit}>
             <h2>Number of Days</h2>
             <p>Please select your workout length</p>
-            <Link className="linkRemove" to="/weeklyworkout" onClick={(e) => onDays('2')}>
-                <button className="btnMultiple">
-                    2 Days
-                </button>
-            </Link>
-            <Link className="linkRemove" to="/weeklyworkout" onClick={(e) => onDays('3')}>
-                <button className="btnMultiple">
-                    3 Days
-                </button>
-            </Link>
-            <Link className="linkRemove" to="/weeklyworkout" onClick={(e) => onDays('4')}>
-                <button className="btnMultiple">
-                    4 Days
-                </button>
-            </Link>
-            <Link className="linkRemove" to="/weeklyworkout" onClick={(e) => onDays('6')}>
-                <button className="btnMultiple">
-                    6 Days
-                </button>
-            </Link>
+
+            <div>
+                <input className="btnMultiple" type='button' value={'2 Days'}
+                onClick={(e) => addDays('2')} />
+
+                <input className="btnMultiple" type='button' value={'3 Days'}
+                onClick={(e) => addDays('3')} />
+
+                <input className="btnMultiple" type='button' value={'4 Days'}
+                onClick={(e) => addDays('4')} />
+
+                <input className="btnMultiple" type='button' value={'6 Days'}
+                onClick={(e) => addDays('6')} />
+
+
+                <input className="btn" type='submit' value='Create Workout' />
+            </div>
+
+            
         </form>
     )
 }

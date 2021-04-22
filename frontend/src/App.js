@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 import React, {useState, useEffect} from "react"
 import './App.css'
+import logo from "./Animals-Dinosaur-icon.png"
 
 // Importing High Level Components
 import Login from './components/pages/Login'
@@ -69,13 +70,11 @@ function App() {
       
     }
   }
- 
 
     useEffect(() => {
         fetchWorkout();
     }, [])
   
-    
     const addDuration = (i) => {
       duration = i;
     }
@@ -97,6 +96,7 @@ function App() {
 
   return (
     <Router>
+      <div className="container">
       <Route path='/' component={Header}/>
       <Route exact path="/" component={Homepage}/>
       <Route exact path="/login" component={Login}/> 
@@ -122,24 +122,25 @@ function App() {
         exact path="/weeklyroutine"
         render={(props) => (
           <WeeklyRoutine {...props} 
-          onDays={addDays} fetchWorkout={fetchWorkout}/>
+          fetchWorkout={fetchWorkout} workout={workout}/>
         )}
       />
       <Route
         exact path="/weeklyworkout"
         render={(props) => (
           <WeeklyWorkout {...props} 
-        workout={workout} fetchWorkout={fetchWorkout}/>
+          workout={workout} fetchWorkout={fetchWorkout}/>
         )}
       />
       <Route
         exact path="/dailyworkout"
         render={(props) => (
           <DailyWorkout {...props} 
-        workout={workout} fetchWorkout={fetchWorkout} />
+          workout={workout} fetchWorkout={fetchWorkout} />
         )}
       />
       <Footer/>
+      </div>
     </Router>
   );
 }

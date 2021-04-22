@@ -19,11 +19,27 @@ const DailyRoutine = ({fetchWorkout}) => {
             alert('Please select a workout length')
             return
         }
+        if (muscle.length === 0) {
+            alert('Please select at least one muscle group')
+            return
+        }
         fetchWorkout('daily',length,'',muscle)
-        console.log(length, muscle)
+        history.push({pathname: '/dailyworkout', state: muscle});
         length = '';
         muscle = [];
-        history.push('/dailyworkout');
+        
+    }
+
+    let buttonStyle = "btnMultiple" 
+    const changeButtonStyle = (e) => {
+        if (buttonStyle = "btnMultiple") {
+            buttonStyle = "btnMultiple2"
+            console.log('yes')
+        } else {
+            buttonStyle = "btnMultiple"
+            
+        }
+        // console.log('yes')
     }
 
     return (
@@ -32,8 +48,8 @@ const DailyRoutine = ({fetchWorkout}) => {
                 <h1>Workout Length</h1>
                 <p>Please select your workout length</p>
                 <div className="btnMultiples">
-                <input className="btnMultiple" type='button' value={'30 Mins'}
-                onClick={(e) => length='Short'} />
+                <input className="btnMultiple"   type='button' value={'30 Mins'}
+                onClick={(e) => length='Short'} /> 
 
                 <input className="btnMultiple" type='button' value={'60 Mins'}
                 onClick={(e) => length='Medium'} />

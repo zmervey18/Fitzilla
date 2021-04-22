@@ -1,25 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Walter+Turncoat');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Walter+Turncoat");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #ffe100;
-  font-family: 'Righteous', cursive;
+  background: white;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
 
 body {
-  
   justify-content: space-around;
   align-items: center;
   align-content: center;
 }
-
 
 .btn {
   box-sizing: flex;
@@ -37,19 +35,20 @@ body {
   margin: auto;
   padding: 1.2em 2.8em;
   text-align: center;
-  font-family: 'Walter Turncoat';
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   text-decoration: none;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   color: rgb(255, 255, 255);
   outline: 0;
-  box-shadow: 0 0 40px 40px red inset;
+  box-shadow: 0 0 40px 40px #045300 inset;
 }
 
-.btnMultiples{
+.btnMultiples {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -63,7 +62,6 @@ body {
   background-color: transparent;
   border: 3px solid;
   border-radius: 0.6em;
-  color: red;
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -73,19 +71,44 @@ body {
   margin: 15px auto;
   padding: 1em 2em;
   text-align: center;
-  font-family: 'Walter Turncoat';
+  /* font-family: "Walter Turncoat"; */
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   text-decoration: none;
-  border-color: #ff0000;
   color: rgb(255, 252, 252);
-  box-shadow: 0 0 40px 40px #ff0000 inset, 0 0 0 0 #ff0000;
+  box-shadow: 0 0 40px 40px #045300 inset, 0 0 0 0 #045300;
   transition: all 150ms ease-in-out;
 }
 
 .btnMultiple:hover {
-  box-shadow: 0 0 1px 0 #ff0000 inset, 0 0 1px 1px #ff0000;
-  color:rgb(0, 0, 0);
+  box-shadow: 0 0 1px 0 #045300 inset, 0 0 1px 1px #045300;
+  color: rgb(0, 0, 0);
+}
+
+.btnMultiple2 {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 15px auto;
+  padding: 1em 2em;
+  text-align: center;
+  /* font-family: "Walter Turncoat"; */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  text-decoration: none;
+  color: rgb(255, 252, 252);
+  box-shadow: 0 0 40px 40px #3794c5 inset, 0 0 0 0 #3794c5;
+  transition: all 150ms ease-in-out;
 }
 
 .linkRemove {
@@ -96,11 +119,14 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border-radius: 0.6em;
   margin-bottom: 10%;
-  width:100%;
-  background: #FF0000;
-  color:antiquewhite;
-  
+  width: 100%;
+  background: #045300;
+  color: rgb(255, 255, 255);
+  font-family: "Righteous", cursive;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .footer {
@@ -108,11 +134,10 @@ body {
   text-align: center;
 }
 
-.pageTitles{
+.pageTitles {
   margin-top: 30px;
   text-align: center;
 }
-
 
 /* For Pagination.js */
 .dayNumbers {
@@ -123,7 +148,7 @@ body {
 .dayNumbers li {
   padding: 10px;
   border: 1px solid white;
-  cursor: pointers;
+  cursor: pointer;
 }
 
 .dayNumbers li.active {
@@ -146,5 +171,30 @@ body {
   line-height: 1;
   margin: auto;
   padding: 1.2em 2.8em;
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 10px solid #045300;
+  padding: 30px;
+  border-radius: 50px;
+}
+
+.smallerText {
+  font-size: smaller;
+}
+
+.imgControl {
+  width: 35px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.imgControl2 {
+  width: 35px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
