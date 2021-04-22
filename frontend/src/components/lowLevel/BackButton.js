@@ -4,7 +4,7 @@ const BackButton = () => {
     let history = useHistory();
     return (
         <div>
-            <button onClick={() => history.goBack()}>Back</button>
+            <button  onClick={() => history.goBack()}>Back</button>
         </div>
     )
 }

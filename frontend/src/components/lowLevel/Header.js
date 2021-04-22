@@ -6,13 +6,13 @@ import HomeButton from './HomeButton';
 const Header = (props) => {
     if (props.location.pathname === '/') {
         return (
-            <header>
+            <header className="header">
                 <h1><BiRun/>Fitzilla</h1>
-        </header>
+            </header>
         )
     }
     return (
-        <header>
+        <header className="header">
                 <h1><BiRun/>Fitzilla</h1>
                 <BackButton />
                 <HomeButton />

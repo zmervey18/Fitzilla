@@ -5,7 +5,7 @@ import Button from '../lowLevel/Button'
 const Homepage = ({buttonName}) => {
     return (
         <div>
-            <h2>Welcome to Fitzilla</h2>
+            <h2 className="pageTitles">Welcome to Fitzilla</h2>
             {/* <Link to="/login"><Button buttonName={'Login'} /></Link>             
             <Link to="/register"><Button buttonName={'Register'}/></Link> */}
             <Link to="/dailyweekly"><Button buttonName={'Generate Workout'}/></Link>

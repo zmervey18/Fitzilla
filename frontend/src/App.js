@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom'
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import './App.css'
 
 // Importing High Level Components
@@ -28,17 +28,8 @@ function App() {
   let days = '';
   const [workout, setWorkout] = useState([])
 
-  // if (length == 'short') {
-  //       var workoutLength = 'Short%20%2830%20mins%29';
-  //     } else if (length == 'medium') {
-  //       var workoutLength = 'Medium%20%281%20hour%29';
-  //     } else if (length == 'long') {
-  //       var workoutLength = 'Long%20%281%20hour%2030%20mins%29';
-
- 
 
   const fetchWorkout= async (duration, length, days, muscle)=> {
-    console.log(duration, length, days, muscle)
     if (duration === 'daily') {
 
       if(length === 'Short'){
@@ -80,10 +71,11 @@ function App() {
   }
  
 
-    // useEffect(() => {
-    //     fetchWorkout();
-    // }, [])
+    useEffect(() => {
+        fetchWorkout();
+    }, [])
   
+    
     const addDuration = (i) => {
       duration = i;
     }
@@ -122,7 +114,8 @@ function App() {
         exact path="/dailyroutine"
         render={(props) => (
           <DailyRoutine {...props} 
-          onLength={addLength} onMuscle={addMuscle} fetchWorkout={fetchWorkout}/>
+          onLength={addLength} onMuscle={addMuscle} 
+          fetchWorkout={fetchWorkout} workout={workout}/>
         )}
       />
       <Route
@@ -143,7 +136,7 @@ function App() {
         exact path="/dailyworkout"
         render={(props) => (
           <DailyWorkout {...props} 
-        workout={workout} fetchWorkout={fetchWorkout}/>
+        workout={workout} fetchWorkout={fetchWorkout} />
         )}
       />
       <Footer/>
