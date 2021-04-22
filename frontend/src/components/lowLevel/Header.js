@@ -13,9 +13,10 @@ const Header = (props) => {
     }
     return (
         <header className="header">
-                <h1><BiRun/>Fitzilla</h1>
-                <BackButton />
-                <HomeButton />
+            
+            <HomeButton className="icons"/>
+            <h1 className="pageTitles">Fitzilla</h1>
+            <BackButton className="icons"/>
         </header>
     )
 }

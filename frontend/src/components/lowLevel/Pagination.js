@@ -30,7 +30,7 @@ const Pagination = ({ workout }) => {
             <ul>
                 {displayDay.map((exercise, index) => {
                     return (
-                        <li >
+                        <li>
                             {exercise}
                         </li>
                     )

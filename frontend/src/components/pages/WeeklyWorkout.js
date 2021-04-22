@@ -4,7 +4,7 @@ const WeeklyWorkout = ({workout}) => {
 
     return (
         <div>
-            <h1>Weekly Workout Page</h1>
+            <h1 className="pageTitles">Weekly Workout Page</h1>
             <Pagination workout={workout} />
         </div>
     )

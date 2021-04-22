@@ -7,7 +7,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #ffe400;
+  background: #ffe100;
   font-family: 'Righteous', cursive;
   font-size: 16px;
   font-weight: 700;
@@ -25,7 +25,7 @@ body {
   box-sizing: flex;
   appearance: none;
   background-color: transparent;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 0.6em;
   color: rgb(0, 0, 0);
   cursor: pointer;
@@ -53,7 +53,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 33%;
+  width: 50%;
   margin: auto;
 }
 
@@ -61,7 +61,7 @@ body {
   box-sizing: flex;
   appearance: none;
   background-color: transparent;
-  border: 2px solid red;
+  border: 3px solid;
   border-radius: 0.6em;
   color: red;
   cursor: pointer;
@@ -77,14 +77,14 @@ body {
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   text-decoration: none;
-  border-color: #7289da;
+  border-color: #ff0000;
   color: rgb(255, 252, 252);
-  box-shadow: 0 0 40px 40px #7289da inset, 0 0 0 0 #7289da;
+  box-shadow: 0 0 40px 40px #ff0000 inset, 0 0 0 0 #ff0000;
   transition: all 150ms ease-in-out;
 }
 
 .btnMultiple:hover {
-  box-shadow: 0 0 10px 0 #7289da inset, 0 0 10px 4px #7289da;
+  box-shadow: 0 0 1px 0 #ff0000 inset, 0 0 1px 1px #ff0000;
   color:rgb(0, 0, 0);
 }
 
@@ -94,16 +94,17 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10%;
   width:100%;
-  background: red;
+  background: #FF0000;
+  color:antiquewhite;
   
 }
 
 .footer {
-  margin-top: 30px;
+  margin-top: 10%;
   text-align: center;
 }
 
@@ -129,3 +130,21 @@ body {
   background-color: gray;
 }
 /*  */
+
+.icons {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 0.6em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: auto;
+  padding: 1.2em 2.8em;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
