@@ -1,14 +1,31 @@
-import React from 'react'
-import { FiLogOut,IoChevronBackOutline,BiRun } from 'react-icons/fa';
+import React from "react";
+import { BiRun } from "react-icons/bi";
+import BackButton from "./BackButton";
+import HomeButton from "./HomeButton";
 
-const Header = () => {
+import logo from "../../Animals-Dinosaur-icon.png";
+
+const Header = (props) => {
+  if (props.location.pathname === "/") {
     return (
-        <header>
-            <div>
-                <h1>Fitzilla</h1>
-            </div>
-        </header>
-    )
-}
+      <header className="header">
+        <h1>
+          <img className="imgControl2" src={logo} />
+          itzilla
+        </h1>
+      </header>
+    );
+  }
+  return (
+    <header className="header">
+      <HomeButton className="icons" />
+      <h1 className="pageTitles">
+        <img className="imgControl" src={logo} />
+        itzilla
+      </h1>
+      <BackButton className="icons" />
+    </header>
+  );
+};
 
-export default Header
+export default Header;

@@ -1,38 +1,253 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Walter+Turncoat");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rowdies:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  font-family: "Baloo Paaji 2", cursive;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+h1 {
+  font-family: "Righteous", cursive;
+}
+
+h3 {
+  font-family: "Baloo Paaji 2", cursive;
+}
+
+.btn {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: 2px rgb(0, 0, 0);
+  border-radius: 0.6em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: auto;
+  padding: 1.2em 2.8em;
+  text-align: center;
+  font-family: "Baloo Paaji 2", cursive;
+  font-weight: 700;
+  transition: box-shadow 500ms ease-in-out, color 600ms ease-in-out;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  color: rgb(255, 255, 255);
+  outline: 0;
+  box-shadow: 0 0 40px 40px #045300 inset;
+}
+
+.btnMultiples {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.btnMultiple {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 15px auto;
+  padding: 1em 2em;
+  text-align: center;
+  /* font-family: "Walter Turncoat"; */
+  font-family: "Baloo Paaji 2", cursive;
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 600ms ease-in-out;
+  text-decoration: none;
+  color: rgb(255, 252, 252);
+  box-shadow: 0 0 40px 40px #045300 inset, 0 0 0 0 #045300;
+}
+
+.btnMultiple:hover,
+.btnMultiple:focus {
+  box-shadow: 0 0 1px 0 #045300 inset, 0 0 1px 1px #045300;
+  color: rgb(0, 0, 0);
+}
+
+.btnMultiple2 {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 15px auto;
+  padding: 1em 2em;
+  text-align: center;
+  /* font-family: "Walter Turncoat"; */
+  font-family: "Baloo Paaji 2", cursive;
+  font-weight: 700;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  text-decoration: none;
+  color: rgb(255, 252, 252);
+  box-shadow: 0 0 40px 40px #3794c5 inset, 0 0 0 0 #3794c5;
+  transition: all 150ms ease-in-out;
+}
+
+.linkRemove {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0.6em;
+  margin-bottom: 10%;
+  width: 100%;
+  background: #045300;
+  color: rgb(255, 255, 255);
+  font-family: "Righteous", cursive;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.footer {
+  margin-top: 10%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pageTitles {
+  margin-top: 30px;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* For Pagination.js */
+.dayNumbers {
+  list-style-type: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.dayNumbers li {
+  padding: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.dayNumbers li.active {
   color: white;
+  background-color: #045300;
+  border-radius: 100px;
+}
+/*  */
+
+.icons {
+  box-sizing: flex;
+  appearance: none;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 0.6em;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: auto;
+  padding: 1.2em 2.8em;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 7px solid #045300;
+  padding: 30px;
+  border-radius: 50px;
+  z-index: 1;
+  /* background-image: url("Animals-Dinosaur-icon.png");
+  background-repeat: no-repeat; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.smallerText {
+  font-size: smaller;
+}
+
+.imgControl {
+  width: 35px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.imgControl2 {
+  width: 35px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.imgControl3 {
+  display: flex;
+  width: 47%;
+  margin: auto;
+  border-radius: 50px;
+}
+
+.containerList {
+  margin: 0px auto;
+  overflow: auto;
+  padding: 30px;
+  border-radius: 50px;
+  font-family: "Neucha", cursive;
+  font-size: 30px;
+  line-height: 1.5em;
+  z-index: 2;
+}
+
+.containerListPagination {
+  margin: auto;
+  overflow: auto;
+  padding: 30px;
+  border-radius: 50px;
+  justify-content: space-evenly;
+  font-family: "Baloo Paaji 2", cursive;
+}
+
+.containerListParent {
+  margin: auto;
+  overflow: auto;
+  padding: 0px;
+  border-radius: 50px;
+}
+
+.listRemove {
+  text-align: center;
+  list-style-type: none;
 }

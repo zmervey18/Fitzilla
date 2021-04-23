@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from forms import DailyForm, HomeForm, WeeklyForm, LoginForm, RegistrationForm
@@ -33,7 +33,7 @@ def home():
 
 #Daily Routine - choose length of time to work out and up to 2 muscle groups
 @app.route('/dailyroutine', methods=['GET','POST'])
-@login_required
+# @login_required
 def daily_routine():    
     form = DailyForm()
     if not form.validate_on_submit():
@@ -53,8 +53,8 @@ def daily_routine():
 
 #Where Daily Routine redirects. The route is the /time/muscle group 1/ muscle group 2. If muscle group 1
 #is muscle group 2 then it's just eg /Arms/Arms  
-@app.route("/<time>/<muscle1>/<muscle2>")
-@login_required
+@app.route("/<time>/<muscle1>/<muscle2>", methods=['GET','POST'])
+# @login_required
 def one_workout(time, muscle1, muscle2):
     if time == 'Short (30 mins)':   
         no_of_exercises = 4
@@ -88,13 +88,13 @@ def one_workout(time, muscle1, muscle2):
             else:
                 random_exercise = eval(muscle).query.get(i)   
             list_of_exercises.append(random_exercise.exercise_name)
-            one_workout = str(list_of_exercises)[1:-1].replace(",", "<br/>").replace("'", "") 
+            one_workout = (list_of_exercises)
 
-    return render_template('one_workout.html', title='One Workout') + f'{one_workout}' + f"<h1>{time}</h1>"
+    return jsonify(one_workout)
 
 #Weekly Routine - choose number of days to exercise
 @app.route('/weeklyroutine', methods=['GET', 'POST'])
-@login_required
+# @login_required
 def weekly_routine():
     form = WeeklyForm()
     if not form.validate_on_submit():
@@ -108,8 +108,8 @@ def weekly_routine():
 #All the exercises are presented as a long list. Each group of six exercises represents one day of the
 #weekly routine. All muscle groups are covered (except Arms which is made up of the subgroups Biceps,
 #Triceps, and Shoudlers) so this is a full body routine.
-@app.route("/<days>")
-@login_required
+@app.route("/<days>", methods=['GET','POST'])
+# @login_required
 def routine(days):
     list_of_exercises = []
     if days == '2 days' or days == '3 days':
@@ -143,9 +143,9 @@ def routine(days):
                     else:
                         random_exercise = eval(muscle).query.get(i)    
                     list_of_exercises.append(random_exercise.exercise_name)
-                    routine = str(list_of_exercises)[1:-1].replace(",", "<br/>").replace("'", "")
+                    routine = (list_of_exercises)
 
-    return render_template('routine.html', title='Your Routine') + f'{routine}' + f"<h1>{days}</h1>"
+    return jsonify(list_of_exercises)
 
 #Login page - username and password
 @app.route('/login', methods =['GET', 'POST'])
