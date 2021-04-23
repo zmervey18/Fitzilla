@@ -1,6 +1,5 @@
 import "../../App.css"
 import {Link} from 'react-router-dom'
-import {useState} from 'react'
 import { useHistory } from 'react-router-dom';
 
 const DailyWorkout = ({workout}) => {
@@ -19,11 +18,14 @@ const DailyWorkout = ({workout}) => {
 
     return (
         <div>
-            <img src={imagesDaily[muscles[0]]}/>
-            <h1 className="pageTitles">Daily Workout Page</h1>
-            <ul>{workout.map((exercise, index) => (<li key={index}>{exercise}</li>))}</ul>
+            <h1 className="pageTitles">Daily Workout</h1>
+
+            <img className="imgControl3" src={imagesDaily[muscles[0]]} alt="workout" />
+            
+            <ul className="containerList">{workout.map((exercise, index) => (<li className="listRemove" key={index}>{exercise}</li>))}</ul>
+            
             <Link className="linkRemove" to='/dailyweekly'>
-                <button className="btnMultiple">Create another workout ?</button>
+                <button className="btnMultiple">Create Another Workout</button>
             </Link>
         </div>
     )

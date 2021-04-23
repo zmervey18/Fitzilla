@@ -27,7 +27,7 @@ const Pagination = ({ workout }) => {
     //creating rendering the workouts for display
     const renderWorkouts = (workout) => {
         return (
-            <ul>
+            <ul className="listRemove containerList">
                 {displayDay.map((exercise, index) => {
                     return (
                         <li key={index}>
@@ -52,8 +52,10 @@ const Pagination = ({ workout }) => {
 
     return (
         <nav>
-            <ul className="dayNumbers">
+            <ul className="dayNumbers containerListPagination">
                 {renderDays}
+            </ul>
+            <ul className="containerListParent listRemove">
                 {renderWorkouts(displayDay)}
             </ul>
         </nav>
