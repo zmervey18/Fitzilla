@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Walter+Turncoat");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rowdies:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rowdies:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 
 body {
   margin: 0;
@@ -13,23 +12,21 @@ body {
   width: 100%;
   height: 100%;
   background: white;
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
   font-size: 16px;
   font-weight: 700;
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  
 }
 
 h1 {
-  font-family: 'Righteous', cursive;
+  font-family: "Righteous", cursive;
 }
 
 h3 {
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
 }
-
 
 .btn {
   box-sizing: flex;
@@ -47,11 +44,10 @@ h3 {
   margin: auto;
   padding: 1.2em 2.8em;
   text-align: center;
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
   font-weight: 700;
   transition: box-shadow 500ms ease-in-out, color 600ms ease-in-out;
   text-decoration: none;
-  
 }
 
 .btn:hover,
@@ -85,7 +81,7 @@ h3 {
   padding: 1em 2em;
   text-align: center;
   /* font-family: "Walter Turncoat"; */
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 600ms ease-in-out;
   text-decoration: none;
@@ -115,7 +111,7 @@ h3 {
   padding: 1em 2em;
   text-align: center;
   /* font-family: "Walter Turncoat"; */
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
   font-weight: 700;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   text-decoration: none;
@@ -199,7 +195,6 @@ h3 {
   z-index: 1;
   /* background-image: url("Animals-Dinosaur-icon.png");
   background-repeat: no-repeat; */
-  
 }
 
 .smallerText {
@@ -230,7 +225,7 @@ h3 {
   overflow: auto;
   padding: 30px;
   border-radius: 50px;
-  font-family: 'Neucha', cursive;
+  font-family: "Neucha", cursive;
   font-size: 30px;
   line-height: 1.5em;
   z-index: 2;
@@ -242,7 +237,7 @@ h3 {
   padding: 30px;
   border-radius: 50px;
   justify-content: space-evenly;
-  font-family: 'Baloo Paaji 2', cursive;
+  font-family: "Baloo Paaji 2", cursive;
 }
 
 .containerListParent {
@@ -255,6 +250,4 @@ h3 {
 .listRemove {
   text-align: center;
   list-style-type: none;
-
- 
 }

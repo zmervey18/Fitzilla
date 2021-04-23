@@ -1,17 +1,14 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const RefreshButton = () => {
-
-    function Home() {
-        const history = useHistory();
-        return <button onClick={() => history.push('/weeklyworkout')}>Profile</button>;
-}
-
+  function Home() {
+    const history = useHistory();
     return (
-        <div>
-            
-        </div>
-    )
-}
+      <button onClick={() => history.push("/weeklyworkout")}>Profile</button>
+    );
+  }
 
-export default RefreshButton
+  return <div></div>;
+};
+
+export default RefreshButton;
