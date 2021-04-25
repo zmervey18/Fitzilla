@@ -1,13 +1,16 @@
 # Fitzilla
 
-Routine-Fitness Front-end
+'Want to rampage through cities all day? Do you want to be Fit like Godzilla?'
 
-Workout generator
+Your Customisable Workout Generator
 
-'Do you ever get bored of doing the same exercises or not knowing what to do? Use our app to generate a tailored fitness routine'
+
 
 Jaron, Daniel, Ben and Zeynep
 
-run "pip install -r requirements.txt"
 
-To run backend in frontend change to env for windows/mac in "package.json" "scripts: flask-run" and then run "npm run flask-run" on the terminal
+
+Instructions on how to run:
+* run "pip install -r requirements.txt" for backend
+
+* To run backend in the frontend folder change to env for either windows or mac in "package.json" "scripts: flask-run" and then run "npm run flask-run" on the terminal
